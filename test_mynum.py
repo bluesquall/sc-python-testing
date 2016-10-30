@@ -27,3 +27,14 @@ def test_long():
 
 # skipping test_complex, because the lesson's assertion that "the arithmetic mean of complex numbers is meaningless" is not true
 
+def test_fib0():
+  # test edge 0
+  assert fib(0) == 1
+
+def test_fib1():
+  assert fib(1) == 1
+
+def test_fib6():
+  assert fib(6) == 13
+
+
