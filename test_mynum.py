@@ -42,3 +42,23 @@ def test_fib_negative():
 
 def test_fib_fraction():
   assert fib(2.5) == NotImplemented
+
+def test_sinc2d_internal():
+  exp = (2.0 / np.pi) * (-2.0 / (3.0 * np.pi))
+  obs = sinc2d(np.pi / 2.0, 3.0 * np.pi / 2.0)
+  assert obs == exp
+
+def test_sinc2d_edge_x():
+  exp = -2.0 / (3.0 * np.pi)
+  obs = sinc2d(0, 3 * np.pi / 2)
+  assert obs == exp
+
+def test_sinc2d_edge_y():
+  exp = 2.0 / np.pi
+  obs = sinc2d(np.pi / 2, 0)
+  assert obs == exp
+
+def test_sinc2d_corner():
+  exp = 1.0
+  obs = sinc2d(0, 0)
+  assert obs == exp

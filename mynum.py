@@ -23,3 +23,27 @@ def fib(n):
       return NotImplemented #Error("Fibonacci sequence doesn't include negatives.")
   else:
     return NotImplemented #Error("Fibonacci sequence only defined for integers.")
+
+def sinc2d(x, y):
+  if x == 0:
+    if y == 0:
+      return 1.0
+    else:
+      return np.sin(y) / y
+  elif y == 0:
+    return np.sin(x) / x
+  else:
+    return np.sin(x) / x * np.sin(y) / y
+
+def sinc2d_ex(x, y):
+  try:
+    return np.sin(x) / x * np.sin(y) / y
+  except ZeroDivisionError:
+    try:
+      return np.sin(x) / x
+    except ZeroDivisionError:
+      try:
+        return np.sin(y) / y
+      except ZeroDivisionError:
+        return 1.0
+
