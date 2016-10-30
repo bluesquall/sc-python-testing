@@ -37,4 +37,8 @@ def test_fib1():
 def test_fib6():
   assert fib(6) == 13
 
+def test_fib_negative():
+  assert fib(-1) == NotImplemented
 
+def test_fib_fraction():
+  assert fib(2.5) == NotImplemented

@@ -16,5 +16,10 @@ def mean(num_list):
 def fib(n):
   if n == 0 or n == 1:
     return 1
+  elif isinstance(n, int):
+    if n > 0:
+      return fib(n - 1) + fib(n - 2)
+    else:
+      return NotImplemented #Error("Fibonacci sequence doesn't include negatives.")
   else:
-    return fib(n - 1) + fib(n - 2)
+    return NotImplemented #Error("Fibonacci sequence only defined for integers.")
