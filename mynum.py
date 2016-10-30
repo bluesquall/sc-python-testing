@@ -5,9 +5,9 @@ from numpy.testing import assert_allclose
 a = np.pi
 
 def mean(num_list):
-  if len(num_list) == 0:
-    raise Exception("Cannot calculate mean from an empty list.")
-  else:
+  try:
     return sum(num_list)/len(num_list)
-
+  except ZeroDivisionError as detail:
+    raise ZeroDivisionError(detail.__str__() + "\n" + 
+        "Cannot calculate mean from an empty list.")
 
