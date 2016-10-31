@@ -62,3 +62,14 @@ def test_sinc2d_corner():
   exp = 1.0
   obs = sinc2d(0, 0)
   assert obs == exp
+
+
+# An integration test:
+def test_mean_fib_0():
+  assert mean_fib(0) == 1
+
+def test_mean_fib_6():
+  assert_allclose(mean_fib(6), 4.714286, atol=1e-6)
+
+def test_mean_fib_neg():
+  assert mean_fib(-1) == 0

@@ -24,6 +24,9 @@ def fib(n):
   else:
     return NotImplemented #Error("Fibonacci sequence only defined for integers.")
 
+def mean_fib(n):
+  return mean([fib(m) for m in range(n+1)])
+
 def sinc2d(x, y):
   if x == 0:
     if y == 0:
