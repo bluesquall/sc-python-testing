@@ -1,0 +1,10 @@
+language: python
+python:
+  - "3.2"
+  - "3.3"
+  - "3.4"
+  # don't bother with python2 for now
+install:
+  - "pip install -r requirements.txt"
+# command to run tests
+script: pytest test_mynum.py
