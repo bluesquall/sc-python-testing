@@ -53,5 +53,10 @@ def sinc2d_ex(x, y):
 def std(vals):
     if len(vals) == 0: # edge case: empty list
         return 0.0
-    return vals[-1]/2.0 # this is still cheating...
+    mu = mean(vals)
+    var = 0.0
+    for x in vals:
+        var += (x - mu)**2
+    var /= len(vals)
+    return (var)**0.5
 
