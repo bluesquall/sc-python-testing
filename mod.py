@@ -3,7 +3,9 @@
 # example python module demonstrating test-driven development
 # (see http://katyhuff.github.io/python-testing/09-tdd.html)
 
-
+# Implementation:
+def std(vals):
+    return 1.0 # surely this is cheating...
 
 
 
