@@ -3,6 +3,9 @@
 # example python module demonstrating test-driven development
 # (see http://katyhuff.github.io/python-testing/09-tdd.html)
 
+# Dependencies:
+from numpy.testing import assert_allclose, assert_equal
+
 # Implementation:
 def std(vals):
     return 1.0 # surely this is cheating...
