@@ -13,4 +13,4 @@ def std(vals):
 def test_std1():
     obs = std([0.0, 2.0])
     exp = 1.0
-    assert obs = exp
+    assert obs == exp
