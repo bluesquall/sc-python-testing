@@ -1,3 +1,4 @@
+import os
 from numpy.testing import assert_allclose, assert_equal
 from mynum import *
 
@@ -103,4 +104,24 @@ def test_std5():
     obs = std([1.0, 1.0, 1.0])
     exp = 0.0
     assert_equal(obs, exp)
+
+def setup_function(func):
+    files = os.listdir('.')
+    if 'no.txt' in files:
+        os.remove('no.txt')
+    if 'yes.txt' in files:
+        os.remove('yes.txt')
+
+def teardown_function(func):
+    if 'yes.txt' in os.listdir('.'):
+        os.remove('yes.txt')
+
+def test_write_num():
+    exp = 42
+    write_num(exp)
+    with open('yes.txt', 'r') as fh:
+        obs = int(fh.read())
+    assert obs == exp
+
+
 
