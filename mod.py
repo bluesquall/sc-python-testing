@@ -32,4 +32,16 @@ def test_std3():
     exp = 2.0
     assert_equal(obs, exp)
 
+def test_std4():
+    # Test a real case where the first value is not zero.
+    obs = std([1.0, 3.0])
+    exp = 1.0
+    assert_equal(obs, exp)
+
+def test_std5():
+    # Test a longer list, but with identical entries.
+    obs = std([1.0, 1.0, 1.0])
+    exp = 0.0
+    assert_equal(obs, exp)
+
 
