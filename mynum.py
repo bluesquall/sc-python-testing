@@ -1,4 +1,4 @@
-
+import os
 import numpy as np
 from numpy.testing import assert_allclose
 
@@ -60,3 +60,9 @@ def std(vals):
     var /= len(vals)
     return (var)**0.5
 
+def write_num(n):
+    if 'no.txt' not in os.listdir('.'):
+        with open('yes.txt', 'w') as fh:
+            fh.write('{0:d}'.format(n))
+    else:
+        warnings.warn("found no.txt; will not write yes.txt", UserWarning)
